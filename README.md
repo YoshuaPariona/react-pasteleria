@@ -2,6 +2,12 @@
 
 Esta aplicación permite al usuario realizar compras y pedidos a la pastelería.
 
+## 👥 Integrantes
+
+| Nro. | Integrantes |
+|------|-------------|
+| 1 | Pariona Inga Logan Yoshua Leonardo |
+
 ## ✨ Ficha técnica
 
 - ⚡️ Creado usando Vite  
@@ -9,10 +15,23 @@ Esta aplicación permite al usuario realizar compras y pedidos a la pastelería.
 - 🎨 Estilizado con Tailwind CSS v4.1  
 - 🧹 Linting con ESLint
 
-## 🧪 Scripts disponibles
+## 🛠️ Instalación
 
-| Comando          | Descripción                        |
-|------------------|------------------------------------|
-| `npm run dev`    | Inicia el servidor de desarrollo   |
-| `npm run build`  | Compila el proyecto para producción |
-| `npm run lint`   | Ejecuta ESLint para detectar errores |
+1. Clona el repositorio:
+
+```bash
+git clone https://github.com/YoshuaPariona/react-pasteleria.git
+cd tu-repositorio
+```
+
+2. Instala las dependencias:
+
+```bash
+npm install
+```
+
+3. Inicia el servidor de desarrollo:
+
+```bash
+npm run dev
+```
