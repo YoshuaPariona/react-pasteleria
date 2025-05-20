@@ -1,0 +1,52 @@
+# Node modules
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Vite cache
+.vite/
+
+# Tailwind cache
+.tailwind/
+
+# dotenv environment files (si los usas)
+.env
+.env.*.local
+
+# VS Code settings
+.vscode/
+
+# System files (Windows)
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# MacOS system files (por si compartes con otros)
+.DS_Store
+
+# IDEs/Editors
+*.sw?
+*.swo
+.idea/
+*.code-workspace
+
+# Coverage reports
+coverage/
+*.lcov
+
+# Optional: OS trash or temp
+$RECYCLE.BIN/
+*.tmp
+*.bak
+*.old
+
+# Optional: vitepress/docs (si usas vitepress)
+docs/.vitepress/cache/
