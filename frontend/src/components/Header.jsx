@@ -1,3 +1,4 @@
+// src/components/Header.jsx
 import { useState } from 'react';
 
 // Definición de constantes para los colores
@@ -37,16 +38,6 @@ export const Header = () => {
           <li>
             <a className={`${COLORS.HOVER_TEXT} transition duration-300 ease-in-out font-bold`} href="/productos">
               PRODUCTOS
-            </a>
-          </li>
-          <li>
-            <a className={`${COLORS.HOVER_TEXT} transition duration-300 ease-in-out font-bold`} href="/carrito">
-              CARRITO
-            </a>
-          </li>
-          <li>
-            <a className={`${COLORS.HOVER_TEXT} transition duration-300 ease-in-out font-bold`} href="/historial-pedidos">
-              PEDIDOS
             </a>
           </li>
           <li>
