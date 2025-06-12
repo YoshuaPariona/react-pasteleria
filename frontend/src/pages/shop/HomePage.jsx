@@ -3,7 +3,7 @@ export const HomePage = () => {
     <>
       <div className="relative w-full h-[calc(100vh-100px)] ">
         <img
-          src="src/assets/fondo.webp"
+          src="assets/fondo.webp"
           alt="Fondo"
           className="absolute inset-0 w-full h-full object-cover z-0"
         />
