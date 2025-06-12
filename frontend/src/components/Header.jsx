@@ -1,7 +1,6 @@
 // src/components/Header.jsx
 import { useState } from 'react';
 
-// Definición de constantes para los colores
 const COLORS = {
   HEADER_BG: "bg-amber-600",
   TEXT: "text-white",
@@ -19,16 +18,19 @@ export const Header = () => {
   };
 
   return (
-    <header className={`${COLORS.HEADER_BG} ${COLORS.TEXT} px-10 py-4`}>
+    <header className={`${COLORS.HEADER_BG} ${COLORS.TEXT} px-10 py-4 shadow-lg`}>
       <nav className="flex justify-between items-center">
-        <div className="flex items-center gap-2">
+        {/* Logo y nombre */}
+        <div className="flex items-center gap-3">
           <img
             src="assets/logo.webp"
             alt="Logo"
-            className="w-16 h-16 rounded-full border-2 border-white"
+            className="w-16 h-16 rounded-full border-2 border-white shadow-md"
           />
-          <h1 className="text-3xl font-bold">PANADERÍA DELICIA</h1>
+          <h1 className="text-3xl font-bold tracking-wide">PANADERÍA DELICIA</h1>
         </div>
+
+        {/* Enlaces principales */}
         <ul className="flex gap-6 text-xl">
           <li>
             <a className={`${COLORS.HOVER_TEXT} transition duration-300 ease-in-out font-bold`} href="/">
@@ -40,24 +42,41 @@ export const Header = () => {
               PRODUCTOS
             </a>
           </li>
-          <li>
-            <a className={`${COLORS.HOVER_TEXT} transition duration-300 ease-in-out font-bold`} href="/nosotros">
-              NOSOTROS
-            </a>
-          </li>
         </ul>
-        <div className="relative">
-          <button onClick={toggleDropdown} className={`${COLORS.HOVER_TEXT} transition duration-300 ease-in-out font-bold`}>
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
+        {/* Botón de cuenta */}
+        <div className="relative me-4">
+          <button
+            onClick={toggleDropdown}
+            className={`flex items-center gap-1 ${COLORS.HOVER_TEXT} transition duration-300 ease-in-out font-bold focus:outline-none`}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
             </svg>
+            <span>Mi cuenta</span>
+            <svg
+              className={`h-5 w-5 transition-transform duration-300 ${isDropdownOpen ? "rotate-180" : ""}`}
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
           </button>
-          {isDropdownOpen && (
-            <div className={`absolute right-0 mt-2 w-48 ${COLORS.DROPDOWN_BG} ${COLORS.DROPDOWN_TEXT} rounded-md shadow-lg z-10`}>
-              <a href="/iniciar-sesion" className={`block px-4 py-2 ${COLORS.DROPDOWN_HOVER_BG} font-bold`}>INICIAR SESIÓN</a>
-              <a href="/registro" className={`block px-4 py-2 ${COLORS.DROPDOWN_HOVER_BG} font-bold`}>REGISTRO</a>
-            </div>
-          )}
+
+          {/* Menú desplegable */}
+          <div
+            className={`absolute right-0 mt-2 w-48 ${COLORS.DROPDOWN_BG} ${COLORS.DROPDOWN_TEXT} rounded-xl shadow-xl z-10 transition-all duration-300 origin-top-right transform ${
+              isDropdownOpen ? "scale-100 opacity-100" : "scale-95 opacity-0 pointer-events-none"
+            }`}
+          >
+            <a href="/iniciar-sesion" className={`block px-4 py-2 ${COLORS.DROPDOWN_HOVER_BG} font-bold`}>
+              Iniciar Sesión
+            </a>
+            <a href="/registro" className={`block px-4 py-2 ${COLORS.DROPDOWN_HOVER_BG} font-bold`}>
+              Registro
+            </a>
+          </div>
         </div>
       </nav>
     </header>

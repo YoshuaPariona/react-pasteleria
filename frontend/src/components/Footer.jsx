@@ -1,36 +1,47 @@
+// src/components/Footer.jsx
+import { FaFacebook, FaInstagram, FaTwitter, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
+
 export const Footer = () => {
   return (
-    <footer className="relative w-full">
-      <img
-        src="assets/footer.jpg"
-        alt="Fondo"
-        className="absolute inset-0 w-full h-full object-cover z-0"
-      />
-
-      <div className="absolute inset-0 bg-black opacity-70 z-0" />
-
-      <div className="relative z-10 text-white px-6 py-10">
-        <div className="flex flex-col md:flex-row justify-between gap-6 w-full max-w-6xl mx-auto">
-          <div className="flex-1">
-            <h2 className="text-xl font-bold mb-4">Contacto</h2>
-            <p className="mb-2">📞 987 654 321</p>
-            <p>📧 panaderiadboyos@gmail.com</p>
-          </div>
-          <div className="flex-1">
-            <h2 className="text-xl font-bold mb-4">Redes Sociales</h2>
-            <div className="flex justify-center md:justify-start space-x-4">
-              <a href="#" className="hover:text-gray-300">Facebook</a>
-              <a href="#" className="hover:text-gray-300">Instagram</a>
-              <a href="#" className="hover:text-gray-300">WhatsApp</a>
+    <footer className="relative bg-cover bg-center text-white py-10 px-6" style={{ backgroundImage: "url('assets/footer.avif')" }}>
+      <div className="absolute inset-0 bg-black opacity-60"></div>
+      <div className="relative z-10 max-w-6xl mx-auto">
+        <div className="flex flex-col md:flex-row justify-between">
+          <div className="w-full md:w-1/3 p-4">
+            <div className="flex items-center mb-4">
+              <img src="assets/logo.webp" alt="Logo" className="mr-2 w-10 h-10 rounded-full border-2 border-white" />
+              <span className="text-xl font-bold">PANADERÍA DELICIA</span>
             </div>
+            <p className="mb-4">
+              Disfruta de nuestros deliciosos pasteles hechos con amor y pasión.
+            </p>
+          </div>
+
+          <div className="w-full md:w-1/3 p-4">
+            <h2 className="text-xl font-bold mb-4 text-center">Horario de Apertura</h2>
+            <ul className="space-y-2">
+              <li className="text-center">Domingo: 2 pm a 10 pm</li>
+              <li className="text-center">Lun - Jue: 10 am a 10 pm</li>
+              <li className="text-center">Vie - Sáb: 9 am a 8 pm</li>
+            </ul>
+          </div>
+
+          <div className="w-full md:w-1/3 p-4">
+            <h2 className="text-xl font-bold mb-4 text-center">Contáctanos</h2>
+            <ul className="space-y-2">
+              <li className="flex items-center justify-center">
+                <FaMapMarkerAlt className="mr-2" /> N°: 58 A, Calle Este Madison, USA 4508
+              </li>
+              <li className="flex items-center justify-center">
+                <FaPhoneAlt className="mr-2" /> Número de contacto: 0000 - 123 - 456789
+              </li>
+              <li className="flex items-center justify-center">
+                <FaEnvelope className="mr-2" /> info@example.com
+              </li>
+            </ul>
+            
           </div>
         </div>
-
-        <hr className="my-6 border-gray-600 w-full max-w-6xl mx-auto" />
-
-        <p className="text-sm text-gray-400 text-center">
-          &copy; 2025 Panadería D'Boyos. Todos los derechos reservados.
-        </p>
       </div>
     </footer>
   );

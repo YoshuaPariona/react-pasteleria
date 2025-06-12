@@ -1,7 +1,6 @@
 // src/App.jsx
 import { Route, Routes } from "react-router-dom";
 import { HomePage } from "./pages/HomePage";
-import { AboutPage } from "./pages/AboutPage";
 import { LoginPage } from "./pages/auth/LoginPage";
 import { RegisterPage } from "./pages/auth/RegisterPage";
 import { ProductsPage } from "./pages/shop/ProductsPage";
@@ -15,7 +14,6 @@ function App() {
       <Route path="/" element={<ShopLayout />}>
         <Route index element={<HomePage />} />
         <Route path="productos" element={<ProductsPage />} />
-        <Route path="nosotros" element={<AboutPage />} />
         <Route path="carrito" element={<CartPage />} />
         <Route path="historial-pedidos" element={<OrderHistoryPage />} />
         <Route path="iniciar-sesion" element={<LoginPage />} />
