@@ -9,8 +9,8 @@ export const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between">
           <div className="w-full md:w-1/3 p-4">
             <div className="flex items-center mb-4">
-              <img src="assets/logo.webp" alt="Logo" className="mr-2 w-10 h-10 rounded-full border-2 border-white" />
-              <span className="text-xl font-bold">PANADERÍA DELICIA</span>
+              <img src="assets/logo.png" alt="Logo" className="mr-2 w-12 h-12" />
+              <span className="text-2xl font-bold">Pan Comido</span>
             </div>
             <p className="mb-4">
               Disfruta de nuestros deliciosos pasteles hechos con amor y pasión.

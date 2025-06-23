@@ -6,7 +6,6 @@ import { RegisterPage } from "./pages/auth/RegisterPage";
 import { ProductsPage } from "./pages/shop/ProductsPage";
 import { ShopLayout } from "./layout/ShopLayout";
 import { OrderHistoryPage } from "./pages/shop/OrderHistoryPage";
-import { CartPage } from "./pages/shop/CartPage";
 
 function App() {
   return (
@@ -14,7 +13,6 @@ function App() {
       <Route path="/" element={<ShopLayout />}>
         <Route index element={<HomePage />} />
         <Route path="productos" element={<ProductsPage />} />
-        <Route path="carrito" element={<CartPage />} />
         <Route path="historial-pedidos" element={<OrderHistoryPage />} />
         <Route path="iniciar-sesion" element={<LoginPage />} />
         <Route path="registro" element={<RegisterPage />} />
