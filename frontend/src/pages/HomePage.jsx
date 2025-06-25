@@ -1,11 +1,14 @@
-
-import React, { useState, useEffect } from 'react';
+// src/pages/HomePage.jsx
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
+import ProductCard from '../components/ui/ProductCard';
+import { CartContext } from '../context/CartContext';
 
-export const HomePage = ({ addToCart }) => {
+
+export const HomePage = () => {
 
   const [products, setProducts] = useState([]);
-
+  const { addToCart } = useContext(CartContext);
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -56,21 +59,11 @@ export const HomePage = ({ addToCart }) => {
         <h2 className="text-center m-10 text-5xl font-bold">Top Productos</h2>
         <div className="grid grid-cols-2 gap-8 justify-center max-w-screen-xl w-3/5 mx-auto md:grid-cols-3">
           {products.map((product) => (
-            <div className="bg-amber-50 m-[0.5px] space-y-1 rounded-lg shadow-md w-full text-center p-4 text-lg" key={product.id}>
-              <img
-                className="w-full h-64 object-cover rounded-lg"
-                src={`http://localhost:8080/${product.imagen}`}
-                alt={product.nombre}
-              />
-              <h3>{product.nombre}</h3>
-              <p>S/{product.precio.toFixed(2)}</p>
-              <button
-                className="bg-[#b4937c] text-white py-2 px-4 rounded-md cursor-pointer"
-                onClick={() => addToCart(product)}
-              >
-                Agregar
-              </button>
-            </div>
+            <ProductCard
+              key={product.id}
+              producto={product}
+              onAddToCart={addToCart}
+            />
           ))}
         </div>
       </section>

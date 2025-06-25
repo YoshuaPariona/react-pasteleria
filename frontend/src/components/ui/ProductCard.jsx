@@ -1,34 +1,23 @@
 // src/components/ui/ProductCard.jsx
-import React from "react";
+import React from 'react';
 
-const ProductCard = ({ product, addToCart }) => {
+export const ProductCard = ({ producto, onAddToCart }) => {
   return (
-    <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 flex flex-col h-full w-60 m-1">
-      <div className="flex-shrink-0">
-        <img
-          src={product.image}
-          alt={product.name}
-          className="w-full h-40 object-cover"
-        />
-      </div>
-      <div className="p-3 flex flex-col flex-grow">
-        <h3 className="text-lg font-semibold text-gray-800 mb-2">
-          {product.name}
-        </h3>
-        <div className="mt-auto">
-          <div className="flex justify-between items-center mb-2">
-            <p className="text-sm text-gray-500">Stock: {product.stock}</p>
-            <p className="text-lg font-bold text-orange-600">
-              ${product.price.toFixed(2)}
-            </p>
-          </div>
-          <button
-            className="w-full bg-orange-500 hover:bg-orange-600 text-white py-2 rounded-lg transition-colors duration-300"
-            onClick={() => addToCart(product)}
-          >
-            Agregar al Carrito
-          </button>
-        </div>
+    <div className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-200 hover:scale-105">
+      <img
+        src={`http://localhost:8080/${producto.imagen}`}
+        alt={producto.nombre}
+        className="w-full h-44 object-cover"
+      />
+      <div className="p-4 text-center">
+        <h4 className="text-lg font-semibold mb-1">{producto.nombre}</h4>
+        <p className="text-[#b4937c] font-bold mb-2">S/{producto.precio.toFixed(2)}</p>
+        <button
+          className="bg-[#b4937c] text-white px-4 py-2 rounded hover:bg-[#8a6a55]"
+          onClick={() => onAddToCart(producto)}
+        >
+          Agregar al carrito
+        </button>
       </div>
     </div>
   );

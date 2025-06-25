@@ -1,37 +1,52 @@
-// src/components/ui/CartItem.jsx
-import React from 'react';
+import { FaTrash } from 'react-icons/fa';
 
-const CartItem = ({ item, updateQuantity, removeItem }) => (
-  <li key={item.id} className="flex items-center bg-gray-50 p-4 rounded-lg">
-    <img src={item.image} alt={item.name} className="w-20 h-20 object-cover rounded" />
-    <div className="flex-grow ml-4">
-      <h2 className="text-lg font-semibold">{item.name}</h2>
-      <p className="text-gray-600">${item.price.toFixed(2)}</p>
-    </div>
-    <div className="flex items-center">
-      <button
-        onClick={() => updateQuantity(item.id, item.quantity - 1)}
-        className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-1 px-3 rounded-l"
-      >
-        -
-      </button>
-      <span className="bg-gray-100 text-gray-800 font-medium py-1 px-4">
-        {item.quantity}
-      </span>
-      <button
-        onClick={() => updateQuantity(item.id, item.quantity + 1)}
-        className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-1 px-3 rounded-r"
-      >
-        +
-      </button>
-      <button
-        onClick={() => removeItem(item.id)}
-        className="ml-4 text-red-500 hover:text-red-700 font-bold"
-      >
-        Eliminar
-      </button>
+export const CartItem = ({ item, updateQuantity, removeItem }) => (
+  <li className="flex bg-amber-50 rounded-lg overflow-hidden shadow-sm w-[300px] h-[100px]">
+    {/* Imagen */}
+    <img
+      src={`http://localhost:8080/${item.imagen}`}
+      alt={item.nombre}
+      className="w-[100px] h-full object-cover"
+    />
+
+    {/* Info */}
+    <div className="flex flex-col justify-between py-2 px-4 flex-grow text-sm w-[260px]">
+      {/* Fila 1: Nombre */}
+      <h2 className="font-semibold truncate">{item.nombre}</h2>
+
+      {/* Fila 2: Subtotal */}
+      <p className="text-[#8a6a55] font-bold">Subtotal: S/ {(item.precio * item.quantity).toFixed(2)}</p>
+
+      {/* Fila 3: Controles */}
+      <div className="flex justify-between items-center mr-4">
+        {/* Contador estilo personalizado */}
+        <div className="flex border border-[#b4937c] rounded bg-[#f3e8e2] font-bold text-lg overflow-hidden h-8">
+          <button
+            onClick={() => updateQuantity(item.id, item.quantity - 1)}
+            className="w-8 flex items-center justify-center text-[#8a6a55] hover:bg-[#e8d8cf]"
+          >
+            -
+          </button>
+          <div className="w-10 flex items-center justify-center text-[#8a6a55]">
+            {item.quantity}
+          </div>
+          <button
+            onClick={() => updateQuantity(item.id, item.quantity + 1)}
+            className="w-8 flex items-center justify-center text-[#8a6a55] hover:bg-[#e8d8cf]"
+          >
+            +
+          </button>
+        </div>
+
+        {/* Eliminar */}
+        <button
+          onClick={() => removeItem(item.id)}
+          className="text-red-500 hover:text-red-700 p-2"
+          title="Eliminar"
+        >
+          <FaTrash />
+        </button>
+      </div>
     </div>
   </li>
 );
-
-export default CartItem;

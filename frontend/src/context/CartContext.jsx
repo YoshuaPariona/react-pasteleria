@@ -44,16 +44,28 @@ export const CartProvider = ({ children }) => {
   };
 
   const calculateTotal = () => {
-    return cartItems.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
+    return cartItems.reduce((total, item) => total + item.precio * item.quantity, 0).toFixed(2);
+  };
+
+  const clearCart = () => {
+    setCartItems([]);
   };
 
   const totalCartItems = cartItems.reduce((total, item) => total + item.quantity, 0);
 
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, updateQuantity, removeItem, calculateTotal, totalCartItems }}>
+    <CartContext.Provider value={{ 
+      cartItems, 
+      addToCart, 
+      updateQuantity, 
+      removeItem, 
+      clearCart,
+      calculateTotal, 
+      totalCartItems }}>
       {children}
     </CartContext.Provider>
   );
 };
 
 export { CartContext };
+
