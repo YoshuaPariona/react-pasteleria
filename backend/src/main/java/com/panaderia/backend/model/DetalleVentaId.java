@@ -1,3 +1,4 @@
+//backend/src/main/java/com/panaderia/backend/model/DetalleVentaId.java
 package com.panaderia.backend.model;
 
 import jakarta.persistence.Column;
@@ -5,7 +6,6 @@ import jakarta.persistence.Embeddable;
 import lombok.*;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 @Embeddable
 @Data
@@ -19,5 +19,4 @@ public class DetalleVentaId implements Serializable {
     @Column(name = "producto_id")
     private Integer productoId;
 
-    // equals y hashCode generados automáticamente por Lombok (@Data)
 }

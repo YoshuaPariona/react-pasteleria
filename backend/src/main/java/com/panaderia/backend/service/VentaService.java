@@ -52,7 +52,6 @@ public class VentaService {
 
             // Relaciones
             detalle.setVenta(ventaGuardada);
-
             Producto producto = new Producto();
             producto.setId(d.getProducto_id());
             detalle.setProducto(producto);
@@ -65,7 +64,6 @@ public class VentaService {
             // Guardar
             detalleVentaRepository.save(detalle);
         }
-
 
         return ventaGuardada;
     }

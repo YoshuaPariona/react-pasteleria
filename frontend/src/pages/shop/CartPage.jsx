@@ -9,7 +9,7 @@ export const CartPage = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
 
   return (
-    <div className="bg-amber-100 min-h-screen pt-[120px]"> {/* Espacio para el header */}
+    <div className="bg-amber-100 min-h-screen pt-[120px]">
       <div className="mx-auto max-w-7xl px-8">
         <div className="p-6">
           <h1 className="text-3xl font-bold text-center mb-8">Carrito de Compras</h1>

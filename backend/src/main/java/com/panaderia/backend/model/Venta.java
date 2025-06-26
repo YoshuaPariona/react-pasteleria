@@ -19,14 +19,11 @@ public class Venta {
     @ManyToOne
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
-
     private LocalDateTime fecha;
-
     private Double total;
 
     @Enumerated(EnumType.STRING)
     private TipoPago tipoPago;
-
     private String numeroComprobante;
 
     @Enumerated(EnumType.STRING)

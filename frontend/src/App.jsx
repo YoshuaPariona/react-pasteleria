@@ -37,7 +37,7 @@ function App() {
               openRegisterModal={openRegisterModal}
               openCart={openCart}
               closeCart={closeCart}
-              isCartOpen={isCartOpen} // Pasamos el estado del carrito
+              isCartOpen={isCartOpen}
             />
           }
         >

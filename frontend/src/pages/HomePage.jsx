@@ -57,7 +57,7 @@ export const HomePage = () => {
       >
         <span id="pedidos"></span>
         <h2 className="text-center m-10 text-5xl font-bold">Top Productos</h2>
-        <div className="grid grid-cols-2 gap-8 justify-center max-w-screen-xl w-3/5 mx-auto md:grid-cols-3">
+        <div className="grid grid-cols-2 gap-8 justify-center max-w-screen-lg w-3/5 mx-auto md:grid-cols-3">
           {products.map((product) => (
             <ProductCard
               key={product.id}

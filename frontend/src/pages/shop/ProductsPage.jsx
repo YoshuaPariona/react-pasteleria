@@ -4,12 +4,10 @@ import axios from 'axios';
 import ProductCard from '../../components/ui/ProductCard';
 import { CartContext } from '../../context/CartContext';
 
-
 export const ProductsPage = () => {
   const [categorias, setCategorias] = useState([]);
   const [productosPorCategoria, setProductosPorCategoria] = useState({});
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState(null);
-
   const { addToCart } = useContext(CartContext);
 
   useEffect(() => {
@@ -22,9 +20,7 @@ export const ProductsPage = () => {
 
         const categoriasData = categoriasRes.data;
         const productosData = productosRes.data;
-
         setCategorias(categoriasData);
-
         const agrupados = {};
         productosData.forEach((prod) => {
           const categoriaId = prod.categoria?.id;

@@ -20,7 +20,6 @@ export const CartSidebar = ({ isOpen, closeCart, openLoginModal }) => {
       return;
     }
 
-
     const ventaPayload = {
       cliente_id: user.id,
       tipo_pago: tipoPago.toLowerCase(),
@@ -29,7 +28,7 @@ export const CartSidebar = ({ isOpen, closeCart, openLoginModal }) => {
       forma_entrega: formaEntrega.toLowerCase(),
       detalle: cartItems.map(item => ({
         producto_id: item.id,
-        cantidad: item.cantidad,
+        cantidad: item.quantity,
         precio_unitario: item.precio,
         descripcion: item.nombre
       }))
@@ -50,7 +49,7 @@ export const CartSidebar = ({ isOpen, closeCart, openLoginModal }) => {
       setTimeout(() => {
         setShowSuccess(false);
         closeCart();
-      }, 3000); // cerrar después de 3 segundos
+      }, 3000);
 
     } catch (error) {
       console.error(error);
